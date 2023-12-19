@@ -8,7 +8,7 @@ The [Alias tracker](alias-tracker.js) integrates with JsPsych `survey-text` tria
 
 The extension generates arrayss of all the change events to open-ended questions (called "question histories"), which you can then pass to our API. To use this extension, simply add a link to it in `index.html`, include it in the `initJsPsych` call, and then pass it as an extension to any `jsPsychSurveyText` questions you want to track (note that you must include at least one `survey-text` question with our extension).
 
-The Alias tracker takes an optional initialization argument `max_n_characters`, when specifies the max number of characters the JSON string of each `question_history` can be (by default, this is 50,000; we highly reccomen setting it to at least 20,000). The extension also requires a `page_id` parameter on every trial where the extension is used. This allows you to easily compare responses across participants even if there are conditional timelines or repeated questions.
+The Alias tracker takes an optional initialization argument `max_n_characters`, when specifies the max number of characters the JSON string of each `question_history` can be (by default, this is 50,000; we highly recommend setting it to at least 20,000). The extension also requires a `page_id` parameter on every trial where the extension is used. This allows you to easily compare responses across participants even if there are conditional timelines or repeated questions.
 
 We include a full example of using our extension in a JsPsych experiment in the [example/](example/) directory. Here is a simplified example:
 
