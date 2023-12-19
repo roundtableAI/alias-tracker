@@ -40,26 +40,14 @@ for element in experiment_data:
 
 api_key = os.getenv('ROUNDTABLE_API_KEY')
 
-# # Make body of request
-# body = {
-#     'questions': questions,
-#     'question_histories': question_histories,
-#     'responses': responses,
-#     'survey_id': survey_id,
-#     'api_key': api_key,
-#     'participant_id': participant_id,
-# }
-
+# Make body of request
 body = {
-"questions": {
-    "question_id_1": "What do you think of Betway as a brand?"
-  },
-"responses": {
-    "question_id_1": "I think Betway is a responsible brand"
-  },
-  "survey_id": "231001",
-  "participant_id": "TESTKH001",
-  "api_key": "sk-JsfrEUrtEgGdRxawHDAn",
+    'questions': questions,
+    'question_histories': question_histories,
+    'responses': responses,
+    'survey_id': survey_id,
+    'api_key': api_key,
+    'participant_id': participant_id,
 }
 
 # Make request and check
