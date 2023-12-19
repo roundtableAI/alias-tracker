@@ -37,4 +37,4 @@ const openEndsTrial = {
 
 ## Calling the API
 
-Our extension automatically adds all of the data the Alias API needs to the trial data. This data is stored as `alias_questions`, `alias_responses`, and `alias_question_histories`. These can be passed to our API for scoring without any additional modifications. An example of parsing the data from our example experiment and passing it to the API is included in the [examples/call-api.py](examples/call-api.py). More information on calling our API and setting up keys can be found on the [Alias API Github](https://github.com/roundtableAI/alias-api).
+Our extension automatically adds all of the data the Alias API needs to the trial data. This data is stored as `alias_questions`, `alias_responses`, and `alias_question_histories`. These can be passed to our API for scoring without any additional modifications. An example of parsing the data from our example experiment and passing it to the API is included in the [example/call-api.py](example/call-api.py). More information on calling our API and setting up keys can be found on the [Alias API Github](https://github.com/roundtableAI/alias-api).
