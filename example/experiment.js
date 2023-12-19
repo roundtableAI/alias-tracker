@@ -7,10 +7,8 @@ const jsPsych = initJsPsych({
     const data = jsPsych.data.get().json();
     const blob = new Blob([data], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
-
-    // Create an anchor element and trigger download
     const a = document.createElement('a');
-    document.body.appendChild(a); // Append the anchor to the body
+    document.body.appendChild(a);
     a.style = 'display: none';
     a.href = url;
     a.download = 'data.json';

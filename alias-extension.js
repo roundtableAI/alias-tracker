@@ -112,6 +112,7 @@ var jsPsychAliasTracker = (function (jspsych) {
         alias_responses: this.final_responses,
         alias_question_histories: this.tracking_events,
       };
+      const okToReturn = this.okToTrack;
       // Clear the data
       this.okToTrack = true;
       this.questions = {};
@@ -119,7 +120,8 @@ var jsPsychAliasTracker = (function (jspsych) {
       this.tracking_events = {};
       this.text_over_length = {};
       this.start_times = {};
-      return return_data;
+      if (okToReturn) return return_data;
+      return {};
     }
   }
   ExtensionNameExtension.info = {
