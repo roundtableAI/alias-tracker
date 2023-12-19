@@ -6,7 +6,7 @@ If you're interested in using the Alias API or have questions about integration,
 
 ## Setup
 
-Our [Alias extension](alias_extension.js) integrates with JsPsych survey-text questions to identify potential fraudelent, inattentive, or bot-like responses. The extension generates question history arrays of the change events on open-ended questions, which can then be passed to our API for scoring.
+Our [Alias extension](alias-extension.js) integrates with JsPsych survey-text questions to identify potential fraudelent, inattentive, or bot-like responses. The extension generates question history arrays of the change events on open-ended questions, which can then be passed to our API for scoring.
 
 To use this extension, simply add a link to it in `index.html`, include it in the `initJsPsych` call, and then pass it as an extension to any `jsPsychSurveyText` questions you want to track. The Alias extension takes an optional initialization argument `max_n_characters`, when specifies the max number of characters JSON string each `question_history` can be (by default, this is 50,000). Additionally, the extension requires passing a `page_id` to every trial where the extension is used - this allows you to easily compare question responses across participants even if there are conditional timelines or repeated questions.
 
