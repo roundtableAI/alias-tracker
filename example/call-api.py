@@ -40,18 +40,27 @@ for element in experiment_data:
 
 api_key = os.getenv('ROUNDTABLE_API_KEY')
 
-# Make body of request
 body = {
     'questions': questions,
     'question_histories': question_histories,
     'responses': responses,
     'survey_id': survey_id,
-    'api_key': api_key,
     'participant_id': participant_id,
 }
 
-# Make request and check
-response = requests.post('https://roundtable.ai/.netlify/functions/alias-v01', json=body)
+# Headers to be sent in the request
+headers = {
+    "Content-Type": "application/json",
+    "api_key": api_key  # API key goes in the headers
+}
+
+# Make request
+response = requests.post(
+    'https://roundtable.ai/.netlify/functions/alias-v011',
+    json=body,
+    headers=headers
+)
+
 if response.status_code == 200:
     # Get the body of the response and print
     results_data = response.json()

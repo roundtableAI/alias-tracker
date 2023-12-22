@@ -29,7 +29,7 @@ var jsPsychAliasTracker = (function (jspsych) {
     }
 
     on_start(params) {
-      if (!this.page_id){
+      if (!params.page_id){
         // If no page_id is provided, raise error
         throw new Error('Alias tracker extension requires a page_id parameter');
       }
