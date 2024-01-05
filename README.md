@@ -45,8 +45,8 @@ This repository provides code to deploy an Alias JsPsych experiment to Heroku, a
 
 ```bash
 git clone https://github.com/roundtableAI/alias-tracker.git  # Clones the repository
-cd alias-tracker/                                            # Navigates into the project directory
-npm install                                                  # Installs all dependencies from package.json
+cd alias-tracker/                                            # Navigates into the directory
+npm install                                                  # Installs all dependencies
 heroku create your-app-name                                  # Creates a new Heroku app
 git push heroku master                                       # Deploys the app to Heroku
 heroku open                                                  # Opens the app in a web browser
