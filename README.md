@@ -41,7 +41,7 @@ Our tracker automatically adds all of the data the Alias API needs to trial data
 
 ## Running on Heroku
 
-...
+```
 
 git clone https://github.com/roundtableAI/alias-tracker.git
 cd alias-tracker/
@@ -51,4 +51,4 @@ heroku create your-app-name
 git push heroku
 heroku open
 
-...
+```
