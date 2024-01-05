@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "jspsych": "^7.3.4"
+  },
+  "engines": {
+    "node": "^20.0",
+    "npm": "^9.6"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "alias-tracker",
+  "description": "This repository contains details on using the [Roundtable Alias API](https://github.com/roundtableAI/alias-api) with JsPsych for survey bot and fraud detection.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC"
+}

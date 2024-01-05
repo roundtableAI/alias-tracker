@@ -10,7 +10,7 @@ The extension generates arrayss of all the change events to open-ended questions
 
 The Alias tracker takes an optional initialization argument `max_n_characters`, when specifies the max number of characters the JSON string of each `question_history` can be (by default, this is 50,000; we highly recommend setting it to at least 20,000). The extension also requires a `page_id` parameter on every trial where the extension is used. This allows you to easily compare responses across participants even if there are conditional timelines or repeated questions.
 
-We include a full example of using our extension in a JsPsych experiment in the [example/](example/) directory. Here is a simplified example:
+We include a full example of using our extension in a JsPsych experiment in the [public/](public/) directory. Here is a simplified example:
 
 ```
 const jsPsych = initJsPsych({
@@ -37,4 +37,18 @@ const openEndsTrial = {
 
 ## Calling the API
 
-Our tracker automatically adds all of the data the Alias API needs to trial data with the `jsPsychAliasTracker` extension. This data is stored as `alias_questions`, `alias_responses`, and `alias_question_histories`. This data can be passed to our API without any further modifications. An example of parsing the data from our example experiment and passing it to the API is included in [example/call-api.py](example/call-api.py). More information on our API and setting up keys can be found on the [Alias API Github](https://github.com/roundtableAI/alias-api).
+Our tracker automatically adds all of the data the Alias API needs to trial data with the `jsPsychAliasTracker` extension. This data is stored as `alias_questions`, `alias_responses`, and `alias_question_histories`. This data can be passed to our API without any further modifications. An example of parsing the data from our example experiment and passing it to the API is included in [call-api.py](call-api.py). More information on our API and setting up keys can be found on the [Alias API Github](https://github.com/roundtableAI/alias-api).
+
+## Running on Heroku
+
+...
+
+git clone https://github.com/roundtableAI/alias-tracker.git
+cd alias-tracker/
+npm init
+npm install jspsych
+heroku create your-app-name
+git push heroku
+heroku open
+
+...
