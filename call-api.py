@@ -56,7 +56,7 @@ headers = {
 
 # Make request
 response = requests.post(
-    'https://roundtable.ai/.netlify/functions/alias-v011',
+    'https://roundtable.ai/api/alias/v011',
     json=body,
     headers=headers
 )
