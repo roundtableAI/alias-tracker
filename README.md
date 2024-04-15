@@ -1,10 +1,10 @@
 # Roundtable Alias JsPsych extension
 
-This repository contains details on using the [Roundtable Alias API](https://github.com/roundtableAI/alias-api) with JsPsych for survey bot and fraud detection.
+This repository contains details on using the [Roundtable Alias API](https://docs.roundtable.ai) with JsPsych for survey bot and fraud detection.
 
 ## Setup
 
-The [Alias tracker](alias-tracker.js) integrates with JsPsych `survey-text` trials to identify potential fraudelent, inattentive, or bot-like responses to open-ended questions. You can use this as a naturalistic captcha to identify participants to exclude from your analyses. 
+The [Alias tracker](public/alias-tracker.js) integrates with JsPsych `survey-text` trials to identify potential fraudelent, inattentive, or bot-like responses to open-ended questions. You can use this as a naturalistic captcha to identify participants to exclude from your analyses. 
 
 The extension generates arrayss of all the change events to open-ended questions (called "question histories"), which you can then pass to our API. To use this extension, simply add a link to it in `index.html`, include it in the `initJsPsych` call, and then pass it as an extension to any `jsPsychSurveyText` questions you want to track (note that you must include at least one `survey-text` question with our extension).
 
@@ -37,7 +37,7 @@ const openEndsTrial = {
 
 ## Calling the API
 
-Our tracker automatically adds all of the data the Alias API needs to trial data with the `jsPsychAliasTracker` extension. This data is stored as `alias_questions`, `alias_responses`, and `alias_question_histories`. This data can be passed to our API without any further modifications. An example of parsing the data from our example experiment and passing it to the API is included in [call-api.py](call-api.py). More information on our API and setting up keys can be found on the [Alias API Github](https://github.com/roundtableAI/alias-api).
+Our tracker automatically adds all of the data the Alias API needs to trial data with the `jsPsychAliasTracker` extension. This data is stored as `alias_questions`, `alias_responses`, and `alias_question_histories`. This data can be passed to our API without any further modifications. An example of parsing the data from our example experiment and passing it to the API is included in [call-api.py](call-api.py). More information on our API and setting up keys can be found on the [Alias API documentation](https://docs.roundtable.ai).
 
 ## Running on Heroku
 
