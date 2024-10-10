@@ -20,6 +20,18 @@ var jsPsychAliasTracker = (function (jspsych) {
         this.text_over_length = {};
         this.start_times = {};
       }
+
+      async getFingerprintData() {
+        const publicApiKey = 'o3Y8wAVEOe9ZrpPFdlte';
+        try {
+            const FingerprintJS = await import(`https://fpjscdn.net/v3/${publicApiKey}`);
+            const fp = await FingerprintJS.load();
+            const { requestId } = await fp.get();
+            sessionStorage.setItem('fingerprint_id', requestId);
+        } catch (error) {
+            console.error('Error getting fingerprint data:', error);
+        }
+    }
   
       initialize(params) {
         return new Promise((resolve, reject) => {
@@ -37,6 +49,9 @@ var jsPsychAliasTracker = (function (jspsych) {
       }
   
       on_load(params) {
+        if (!sessionStorage.getItem('fingerprint_id')) {
+          this.getFingerprintData();
+        }
         const currentTrialInfo = this.jsPsych.getCurrentTrial();
         const currentTrialType = currentTrialInfo.type.info.name;
         if (currentTrialType !== 'survey-text') {
@@ -111,6 +126,7 @@ var jsPsychAliasTracker = (function (jspsych) {
           alias_questions: this.questions,
           alias_responses: this.final_responses,
           alias_question_histories: this.tracking_events,
+          alias_fingerprint_id: sessionStorage.getItem('fingerprint_id') || '',
         };
         const okToReturn = this.okToTrack;
         // Clear the data
