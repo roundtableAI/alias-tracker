@@ -10,7 +10,7 @@ The Alias tracker extension generates arrays of all the change events to open-en
 
 The Alias tracker takes an optional initialization argument `max_n_characters`, when specifies the max number of characters the JSON string of each `question_history` can be (by default, this is 50,000; we highly recommend setting it to at least 20,000). The extension also requires a `page_id` parameter on every trial where the extension is used. This allows you to easily compare responses across participants even if there are conditional timelines or repeated questions.
 
-For fingerprinting, the Alias tracker generates a fingerprinting id and adds it to the jsPsych data on every `jsPsychSurveyText` trial with the Alias extension. You can then pass this id to the API to identify duplicate participants, their locations, and device information.
+For fingerprinting, the Alias tracker generates a fingerprint id and adds it to the jsPsych data on every `jsPsychSurveyText` trial with the Alias extension. You can then pass this id to the API to identify duplicate participants, their locations, and device information. Note that there is only one fingerprint id generated per participant-session.
 
 We include a full example of using our extension in a JsPsych experiment in the [public/](public/) directory. Here is a simplified example:
 
