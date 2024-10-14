@@ -4,13 +4,13 @@ This repository contains details on using the [Roundtable Alias API](https://doc
 
 ## Setup
 
-The [Alias tracker](public/alias-tracker.js) integrates with JsPsych `survey-text` trials to identify potential fraudelent, inattentive, or bot-like responses to open-ended questions. You can use this as a naturalistic captcha to identify participants to exclude from your analyses. We also do device fingerprinting for additional security and device checks.
+The [Alias tracker](public/alias-tracker.js) integrates with JsPsych `survey-text` trials to identify potential fraudelent, inattentive, or bot-like responses to open-ended questions. You can use this as a naturalistic captcha to identify participants to exclude from your analyses. We also do device fingerprinting for additional security and duplicate detection.
 
 The Alias tracker extension generates arrays of all the change events to open-ended questions (called "question histories"), which you then pass to our API. To use this extension, add a link to it in `index.html`, include it in the `initJsPsych` call, and then pass it as an extension to any `jsPsychSurveyText` questions you want to track (note that you must include at least one `survey-text` question with our extension).
 
 The Alias tracker takes an optional initialization argument `max_n_characters`, when specifies the max number of characters the JSON string of each `question_history` can be (by default, this is 50,000; we highly recommend setting it to at least 20,000). The extension also requires a `page_id` parameter on every trial where the extension is used. This allows you to easily compare responses across participants even if there are conditional timelines or repeated questions.
 
-For fingerprinting, the Alias tracker generates a fingerprint id and adds it to the jsPsych data on every `jsPsychSurveyText` trial with the Alias extension. You can then pass this id to the API to identify duplicate participants, their locations, and device information. Note that there is only one fingerprint id generated per participant-session.
+For fingerprinting, the Alias tracker generates a fingerprint id and adds it to the jsPsych data on every `jsPsychSurveyText` trial with the Alias extension. You can then pass this id to the API to identify duplicate participants. Note that there is only one fingerprint id generated per participant-session.
 
 We include a full example of using our extension in a JsPsych experiment in the [public/](public/) directory. Here is a simplified example:
 
